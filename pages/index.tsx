@@ -7,7 +7,7 @@ import Header from '../components/header'
 export default function Home() {
   return (
     <div className='bg-olive'>
-      <div className='uppercase font-900 text-4xl text-gray-800 font-title'>
+      <div className='uppercase font-900cd w3 text-4xl text-gray-800 font-title'>
         <h1>Vision & Value</h1>
       </div>
       <div className='text-sm font-300 text-gray-800 font-mono'>

@@ -11,26 +11,23 @@
     src: url('../asset/Mono/MonoLight.ttf');
     font-weight: 300
 }
+/* Sytrene B Font for Titles */
 @font-face {
-    font-family: 'MSBee';
+    font-family: 'StyreneB';
     src: url('../asset/MSBee/MSBee-Black.ttf');
     font-weight: 900;    
 }
-@font-face {
-    font-family: 'MSBee';
-    src: url('../asset/MSBee/MSBee-Medium.ttf');
-    font-weight: 500;
-}
-@font-face {
-    font-family: 'MSBee';
-    src: url('../asset/MSBee/MSBee-Light.ttf');
-    font-weight: 300;    
-}
 
 @font-face {
-    font-family: 'MSBee';
-    src: url('../asset/MSBee/MSBee-Thin.ttf');
-    font-weight: 100;    
+    font-family: 'MP';
+    src: url('../asset/MP/MP-Black.ttf');
+    font-weight: 900;
 }
+@font-face {
+    font-family: 'MP';
+    src: url('../asset/MP/MP-Regular.ttf');
+    font-weight: 400;
+}
+
 
 @tailwind utilities;
