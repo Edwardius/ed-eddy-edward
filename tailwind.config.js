@@ -24,7 +24,8 @@ module.exports = {
       transparent: 'trnsparent',
       gray: colors.gray,
       'olive': '#ebe7e0',
-      'azukired': '#c03541'
+      'azukired': '#c03541', 
+      'azukigray': '#f5f5f5'
     },
     fontWeight: {
       '100': '100',
@@ -78,7 +79,7 @@ module.exports = {
     extend: {
       fontFamily: {
         'mono': ['Mono', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans'],
-        'title': ['MSBee', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans']
+        'title': ['SB', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans']
       }
     },
   },
