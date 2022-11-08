@@ -20,7 +20,7 @@ export default function NavBar({ active_page } : { active_page: string}) {
         <li><SocialButton link='https://www.linkedin.com/in/eddy-zhou-6968b8184/' icon='/linkedin-icon.png'/></li>
         <li><SocialButton link='https://www.youtube.com/channel/UCBYnPI9wfTCs-dCgo6_B45g' icon='/youtube-icon.png'/></li>
         <li><NavButton text='Connect' href='/connect' active={active_page}/></li>
-        <li><div><h1 className='font-title text-gray-500 font-base font-600 pt-0.3 pl-2'>//</h1></div></li>
+        <li><div><h1 className='font-title text-gray-500 font-base font-600 pt-0.3 pl-2'>\\</h1></div></li>
         <li><WATOButton/></li>
       </ul>
         
