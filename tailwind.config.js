@@ -24,7 +24,10 @@ module.exports = {
       transparent: 'trnsparent',
       gray: colors.gray,
       'olive': '#ebe7e0',
-      'azukired': '#c03541', 
+      'azukired': {
+        '500':'#c03541', 
+        '800':'#f06571'
+      },
       'azukigray': '#f5f5f5'
     },
     fontWeight: {

@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import NavBar from '../components/nav/nav_bar'
 
-export default function Home() {
+export default function Leadership() {
   return (
     <div>
       <Head>
@@ -12,7 +12,7 @@ export default function Home() {
       {/* Begin Main of Page */}
       <main className='bg-azukigray'>
         {/* Navigation Bar */}
-        <NavBar active_page={Home.name}/>
+        <NavBar active_page={Leadership.name}/>
 
         {/* Body */}
         <div className='px-4 pt-24 pb-96'>
