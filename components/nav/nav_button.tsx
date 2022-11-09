@@ -5,7 +5,7 @@ export default function NavButton({ text, href, active }:
   { text: string, href: string, active: string }) {
   
   // Is this good practice?
-  var config = 'transition-colors ease-in bg-gray-500 bg-opacity-10 hover:bg-opacity-20 \
+  var config = 'transition-colors ease-in bg-black bg-opacity-3 hover:bg-opacity-10 \
   py-1.5 px-4 rounded text-xs uppercase font-mono font-100';
 
   if (active == text) {

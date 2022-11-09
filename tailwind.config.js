@@ -23,6 +23,7 @@ module.exports = {
     colors: {
       transparent: 'trnsparent',
       gray: colors.gray,
+      black: colors.black,
       'olive': '#ebe7e0',
       'azukired': {
         '500':'#c03541', 
@@ -83,6 +84,12 @@ module.exports = {
       fontFamily: {
         'mono': ['Mono', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans'],
         'title': ['SB', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans']
+      },
+      opacity: {
+        '3':'.03'
+      },
+      maxWidth: {
+        '11xl': '116rem'
       }
     },
   },
