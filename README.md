@@ -1,3 +1,8 @@
 # ed-eddy-edward
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). Tailwind CSS is also installed.
+This is my portfolio.
+
+Frontend stack: React using a Next.js framework, Tailwind CSS, Typescript
+All art is done on Procreate
+
+Work in Progress :)

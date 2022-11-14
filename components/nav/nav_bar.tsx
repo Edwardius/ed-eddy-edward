@@ -5,6 +5,8 @@ import NavButton from './nav_button';
 import SocialButton from './social_button';
 import WATOButton from './wato_button';
 
+import getWindowDimensions from '../../hooks/window_size';
+
 export default function NavBar({ active_page } : { active_page: string}) {
   return(
     <div className='z-10 fixed w-full top-0 lg:px-8 px-4 lg:pt-8 pt5 '>
