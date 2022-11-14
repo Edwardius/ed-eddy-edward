@@ -14,7 +14,7 @@ export default function Home() {
       <NavBar active_page={Home.name}/>
       
       <div>
-        <video className='w-full transform hidden lg:block h-screen object-cover overlay-item z-0' loop autoPlay playsInline>
+        <video className='w-full transform hidden lg:block h-screen object-cover overlay-item z-0' muted loop autoPlay playsInline>
           <source src='/eee-animation.mp4' type="video/mp4"/>
         </video>
 
