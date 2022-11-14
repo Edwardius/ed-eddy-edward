@@ -5,7 +5,7 @@ export default function Leadership() {
   return (
     <div>
       <Head>
-        <title>EdEddyEdward</title>
+        <title>EdEddyEdward | Leadership</title>
         <link rel='icon' href='/favicon.ico'/>
       </Head>
 

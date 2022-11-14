@@ -12,7 +12,13 @@ export default function Home() {
       {/* Begin Main of Page */}
       <NavBar active_page={Home.name}/>
       
-      <img src='/eee-homephoto.png' className='z-0 w-full transform hidden lg:block h-screen object-cover'/>
+      <div>
+        <video className='w-full transform hidden lg:block h-screen object-cover overlay-item z-0' loop autoPlay playsInline>
+          <source src='/eee-animation.mp4' type="video/mp4"/>
+        </video>
+
+        <img src='/artist-touch.png' className='fixed bottom-20 right-20 w-64 z-10'/>
+      </div>
 
       {/* End Main of Page */}
 

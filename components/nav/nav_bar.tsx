@@ -7,7 +7,7 @@ import WATOButton from './wato_button';
 
 export default function NavBar({ active_page } : { active_page: string}) {
   return(
-    <div className='z-10 fixed w-full top-0 lg:px-8 px-4 lg:pt-8 pt5 bg-transparent'>
+    <div className='z-10 fixed w-full top-0 lg:px-8 px-4 lg:pt-8 pt5 '>
       <div className='flex h-full items-center justify-between max-w-11xl mx-auto'>
         <div className='float-left flex'>
           <HomeButton />

@@ -5,7 +5,7 @@ export default function Mindmap() {
   return (
     <div>
       <Head>
-        <title>EdEddyEdward</title>
+        <title>EdEddyEdward | MindMap</title>
         <link rel='icon' href='/favicon.ico'/>
       </Head>
 

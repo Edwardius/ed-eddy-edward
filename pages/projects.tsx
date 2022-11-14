@@ -5,7 +5,7 @@ export default function Projects() {
   return (
     <div>
       <Head>
-        <title>EdEddyEdward</title>
+        <title>EdEddyEdward | Projects</title>
         <link rel='icon' href='/favicon.ico'/>
       </Head>
 

@@ -5,7 +5,7 @@ export default function Future() {
   return (
     <div>
       <Head>
-        <title>EdEddyEdward</title>
+        <title>EdEddyEdward | Future</title>
         <link rel='icon' href='/favicon.ico'/>
       </Head>
 
