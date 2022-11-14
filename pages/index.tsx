@@ -2,6 +2,7 @@ import Head from 'next/head'
 import NavBar from '../components/nav/nav_bar'
 
 export default function Home() {
+  
   return (
     <div>
       <Head>
