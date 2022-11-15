@@ -14,12 +14,12 @@ export default function Home() {
       <NavBar active_page={Home.name}/>
       
       <div>
-        <video className='w-full block h-screen object-cover overlay-item z-0' muted loop autoPlay playsInline>
+        <video className='w-full block h-screen object-cover object-center overlay-item z-0 bottom-0' muted loop autoPlay playsInline>
           <source src='/eee-animation.mp4' type="video/mp4"/>
         </video>
 
-        <img src='/artist-touch.png' className='absolute z-10 md:bottom-20 md:right-20 md:w-64 \
-        xs:invisible'/>
+        <img src='/artist-touch.png' className='fixed z-10 md:bottom-20 md:right-20 md:w-64 \
+        xs:invisible md:visible'/>
       </div>
 
       {/* End Main of Page */}
