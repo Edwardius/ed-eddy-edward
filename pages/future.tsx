@@ -22,11 +22,8 @@ export default function Future() {
             </div>
             <div className='px-4 pb-8 text-sm font-300 text-gray-800 font-mono'>
               <p>
-                <span className="font-500">We are the skaters of the internet. </span>
-                We’re skating between the blurred lines of the physical and digital worlds 
-                as they are beginning to blend. We are a community of individuals who 
-                aren’t afraid to push the boundaries, challenge the status quo, 
-                and communicate boldly. We’re making an impact on web3 culture.
+                <span className="font-500">Under Construction </span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempor, mi ut luctus rhoncus, lorem dui posuere nisi, eleifend venenatis erat elit sit amet tortor. Etiam ut consectetur quam. Cras nisl metus, porttitor at lectus lobortis, auctor ullamcorper elit. Cras at nibh id magna imperdiet euismod. Fusce fringilla nec ex non posuere. Curabitur varius ipsum at velit ultricies iaculis. Vestibulum at urna et lorem tempor pulvinar. Sed dictum sem at quam pellentesque ornare. Under Construction
               </p>
             </div>
           </div>
@@ -39,11 +36,8 @@ export default function Future() {
             </div>
             <div className='px-4 pb-8 text-sm font-300 text-gray-800 font-mono'>
               <p>
-                <span className="font-500">We are the skaters of the internet. </span>
-                We’re skating between the blurred lines of the physical and digital worlds 
-                as they are beginning to blend. We are a community of individuals who 
-                aren’t afraid to push the boundaries, challenge the status quo, 
-                and communicate boldly. We’re making an impact on web3 culture.
+                <span className="font-500">Under Construction </span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempor, mi ut luctus rhoncus, lorem dui posuere nisi, eleifend venenatis erat elit sit amet tortor. Etiam ut consectetur quam. Cras nisl metus, porttitor at lectus lobortis, auctor ullamcorper elit. Cras at nibh id magna imperdiet euismod. Fusce fringilla nec ex non posuere. Curabitur varius ipsum at velit ultricies iaculis. Vestibulum at urna et lorem tempor pulvinar. Sed dictum sem at quam pellentesque ornare. Under Construction
               </p>
             </div>
           </div>
