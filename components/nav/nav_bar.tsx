@@ -6,7 +6,7 @@ import SocialButton from './nav_desktop/nav_buttons/social_button'
 import WATOButton from './nav_desktop/nav_buttons/wato_button'
 
 import getWindowDimensions from '../../hooks/window_size'
-import getBreakpoint from '../utils/get_brekpoint'
+import getBreakpoint from '../utils/get_breakpoint'
 import MenuButton from './nav_hamburger/menu_items/menu_button'
 import Menu from './nav_hamburger/menu'
 import NavMenu from './nav_desktop/nav_menu'
