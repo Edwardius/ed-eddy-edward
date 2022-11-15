@@ -90,8 +90,11 @@ module.exports = {
       },
       maxWidth: {
         '11xl': '116rem'
+      },
+      screens: {
+        'xs': '320px',
       }
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-hamburgers')],
 }
