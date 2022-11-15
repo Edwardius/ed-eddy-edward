@@ -5,3 +5,6 @@ const nextConfig = {
 }
 
 module.exports = nextConfig
+
+// Classnames
+var classNames = require('classnames');
