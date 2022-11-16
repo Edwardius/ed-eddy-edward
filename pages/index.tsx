@@ -2,15 +2,14 @@ import { useState, useEffect } from 'react';
 import { isAndroid } from 'react-device-detect'
 import Head from 'next/head'
 import NavBar from '../components/nav/nav_bar'
-import getBreakpoint from '../components/utils/get_breakpoint';
-
-import useWindowDimensions from '../hooks/window_size'
+import useLockedBody from '../hooks/lock_scroll';
 
 export default function Home() {
+  const [locked, setLocked] = useLockedBody(false, 'root')
   const [initialRenderComplete, setInitialRenderComplete] = useState(false);
 
-    // This useEffect will only run once, during the first render
-    useEffect(() => {
+  // This useEffect will only run once, during the first render
+  useEffect(() => {
     // Updating a state causes a re-render
     setInitialRenderComplete(true);
   }, []);
@@ -19,7 +18,6 @@ export default function Home() {
     return null;
   }
 
-  const breakpoint = getBreakpoint('xl');
   let background;
 
   if (isAndroid) {
@@ -40,7 +38,7 @@ export default function Home() {
       </Head>
 
       {/* Begin Main of Page */}
-      <NavBar active_page={Home.name}/>
+      <NavBar active_page={Home.name} set_locked={setLocked}/>
       
       <div>
         {background}
