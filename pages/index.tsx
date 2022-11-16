@@ -46,7 +46,7 @@ export default function Home() {
         {background}
 
         <img src='/artist-touch.png' className='absolute z-10 md:bottom-20 md:right-20 md:w-64 \
-        xs:right-10 xs:bottom-10 xs:w-32'/>
+        xs:right-5 xs:bottom-5 xs:w-28'/>
       </div>
       {/* End Main of Page */}
 
