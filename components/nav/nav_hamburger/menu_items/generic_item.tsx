@@ -22,7 +22,7 @@ export default function GenericItem({text, href, active, icon = '', red = false}
 
   return(
     <Link href={href}>
-      <button className={classNames('transition pt-6 pb-2 w-full uppercase font-900 text-2xl \
+      <button className={classNames('transition pt-6 pb-2 w-full uppercase font-900 text-xl \
       text-left font-title border-b-2 border-gray-800 border-opacity-20', {'hover:text-azukired-500 text-gray-800' : active != text}, 
       {'text-azukired-500': red}, {'text-gray-500 text-opacity-50': active == text})} disabled={active == text}>
           {text}
