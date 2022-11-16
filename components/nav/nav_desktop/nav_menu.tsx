@@ -17,7 +17,7 @@ export default function NavMenu ({active_page}:
             <li><SocialButton link='https://www.youtube.com/channel/UCBYnPI9wfTCs-dCgo6_B45g' icon='/icons/youtube-icon.png'/></li>
             <li><SocialButton link='https://github.com/Edwardius' icon='/icons/github-icon.png'/></li>
             <li><NavButton text='Connect' href='/connect' active={active_page}/></li>
-            <li><div><p className='font-title text-gray-600 font-base font-600 pt-0.5 pl-2'>&sol&sol</p></div></li>
+            <li><div><p className='font-title text-gray-600 font-base font-600 pt-0.5 pl-2'>||</p></div></li>
             <li><WATOButton/></li>
           </ul>
     );

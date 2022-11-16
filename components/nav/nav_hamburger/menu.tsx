@@ -28,7 +28,7 @@ export default function Menu ({open, active_page}:
           <li><div className='text-sm font-mono font-300 border-black'><h1>Why did I make a website? idk.</h1></div></li>
           <li><div className='text-sm font-mono font-300 border-black'><h1>Art done on Procreate</h1></div></li>
           <li><div className='text-sm font-mono font-300 border-black'><h1>Made on a Next.js Framework using React, Typescript, TailwindCSS</h1></div></li>
-          <li><div className='text-sm font-mono font-300 pt-12 border-black pb-48'><h1>No code copying here &lt:&rpar</h1></div></li>
+          <li><div className='text-sm font-mono font-300 pt-12 border-black pb-48'><h1>All componenets made from scratch!</h1></div></li>
         </ul>
       </div>
     );

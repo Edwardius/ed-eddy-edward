@@ -1,11 +1,24 @@
+import { useState, useEffect } from 'react';
 import Head from 'next/head'
 import NavBar from '../components/nav/nav_bar'
 import getBreakpoint from '../components/utils/get_breakpoint';
 
-import getWindowDimensions from '../hooks/window_size'
+import useWindowDimensions from '../hooks/window_size'
 
 export default function Home() {
-  const size = getWindowDimensions();
+  const size = useWindowDimensions();
+  const [initialRenderComplete, setInitialRenderComplete] = useState(false);
+
+    // This useEffect will only run once, during the first render
+    useEffect(() => {
+    // Updating a state causes a re-render
+    setInitialRenderComplete(true);
+  }, []);
+
+  if (!initialRenderComplete) {
+    return null;
+  }
+
   const breakpoint = getBreakpoint('xl');
   let background;
 
