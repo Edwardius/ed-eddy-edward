@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { isAndroid } from 'react-device-detect'
 import Head from 'next/head'
 import NavBar from '../components/nav/nav_bar'
 import getBreakpoint from '../components/utils/get_breakpoint';
@@ -6,7 +7,6 @@ import getBreakpoint from '../components/utils/get_breakpoint';
 import useWindowDimensions from '../hooks/window_size'
 
 export default function Home() {
-  const size = useWindowDimensions();
   const [initialRenderComplete, setInitialRenderComplete] = useState(false);
 
     // This useEffect will only run once, during the first render
@@ -22,10 +22,7 @@ export default function Home() {
   const breakpoint = getBreakpoint('xl');
   let background;
 
-  if (size.width == null) {
-    background = <img src='eee-homepage.png' className='w-full block h-screen object-cover object-center overlay-item z-0 bottom-0'/>
-  }
-  else if (size.width < breakpoint) {
+  if (isAndroid) {
     background = <img src='eee-homepage.png' className='w-full block h-screen object-cover object-center overlay-item z-0 bottom-0'/>
   }
   else {
