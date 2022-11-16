@@ -6,11 +6,12 @@ interface ButtonProps {
   text: string,
   href: string, 
   active: string,
+  open: boolean,
   icon?: string, 
   red?: boolean
 }
 
-export default function GenericItem({text, href, active, icon = '', red = false}: ButtonProps) {
+export default function GenericItem({text, href, active, open, icon = '', red = false}: ButtonProps) {
   let icon_ele;
   
   if (icon) {
@@ -24,7 +25,7 @@ export default function GenericItem({text, href, active, icon = '', red = false}
     <Link href={href}>
       <button className={classNames('transition pt-6 pb-2 w-full uppercase font-900 text-xl \
       text-left font-title border-b-2 border-gray-800 border-opacity-20', {'hover:text-azukired-500 text-gray-800' : active != text}, 
-      {'text-azukired-500': red}, {'text-gray-500 text-opacity-50': active == text})} disabled={active == text}>
+      {'text-azukired-500': red}, {'text-gray-500 text-opacity-50': active == text})} disabled={!open || active == text}>
           {text}
           {icon_ele}
       </button>
