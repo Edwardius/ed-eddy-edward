@@ -7,7 +7,9 @@ import MenuButton from './nav_hamburger/menu_items/menu_button'
 import Menu from './nav_hamburger/menu'
 import NavMenu from './nav_desktop/nav_menu'
 
-export default function NavBar({ active_page } : { active_page: string}) {
+export default function NavBar({active_page, set_locked}: {active_page: string, 
+  set_locked: (locked: boolean) => void}) {
+  
   const [initialRenderComplete, setInitialRenderComplete] = useState(false);
 
   	// This useEffect will only run once, during the first render
@@ -20,8 +22,9 @@ export default function NavBar({ active_page } : { active_page: string}) {
   const size = useWindowDimensions();
   const breakpoint = getBreakpoint('xl');
 
-  // hamburger menu hook
+  // hamburger menu hook and lock
   const [open, setOpen] = useState(false);
+  set_locked(open);
 
   if (!initialRenderComplete || size.width == null) {
     return null;
@@ -53,6 +56,4 @@ export default function NavBar({ active_page } : { active_page: string}) {
       </div>
     );
   }
-
-  
 }
