@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import HomeButton from './nav_desktop/nav_buttons/home_button'
 
-import NavButton from './nav_desktop/nav_buttons/nav_button'
-import SocialButton from './nav_desktop/nav_buttons/social_button'
-import WATOButton from './nav_desktop/nav_buttons/wato_button'
-
-import getWindowDimensions from '../../hooks/window_size'
+import useWindowDimensions from '../../hooks/window_size'
 import getBreakpoint from '../utils/get_breakpoint'
 import MenuButton from './nav_hamburger/menu_items/menu_button'
 import Menu from './nav_hamburger/menu'
@@ -20,7 +16,7 @@ export default function NavBar({ active_page } : { active_page: string}) {
 		setInitialRenderComplete(true);
 	}, []);
 
-  const size = getWindowDimensions();
+  const size = useWindowDimensions();
   const breakpoint = getBreakpoint('xl');
 
   // hamburger menu hook
