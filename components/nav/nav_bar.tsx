@@ -16,6 +16,7 @@ export default function NavBar({ active_page } : { active_page: string}) {
 		setInitialRenderComplete(true);
 	}, []);
 
+  // to decide which navbar to use
   const size = useWindowDimensions();
   const breakpoint = getBreakpoint('xl');
 
@@ -38,9 +39,8 @@ export default function NavBar({ active_page } : { active_page: string}) {
     );
   }
   else {
-    
     return(
-      <div>
+      <div className='transition-all ease-in'>
         <div className='z-30 fixed w-full top-0 px-4 pt-6 '>
           <div className='flex h-full items-center justify-between max-w-11xl mx-auto'>
             <div className='float-left flex'>
