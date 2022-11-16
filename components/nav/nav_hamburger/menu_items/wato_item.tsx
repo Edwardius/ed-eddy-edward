@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 
 
-export default function WATOItem({open}: {open: boolean}) {
+export default function WATOItem() {
 
   return(
     <Link href='https://www.watonomous.ca/'>
