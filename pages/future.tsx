@@ -1,7 +1,10 @@
 import Head from 'next/head'
 import NavBar from '../components/nav/nav_bar'
 
+import useLockedBody from '../hooks/lock_scroll';
+
 export default function Future() {
+  const [locked, setLocked] = useLockedBody(false, 'root');
   return (
     <div>
       <Head>
@@ -12,7 +15,7 @@ export default function Future() {
       {/* Begin Main of Page */}
       <main className='bg-azukigray'>
         {/* Navigation Bar */}
-        <NavBar active_page={Future.name}/>
+        <NavBar active_page={Future.name} set_locked={setLocked}/>
 
         {/* Body */}
         <div className='px-4 pt-24 pb-96'>

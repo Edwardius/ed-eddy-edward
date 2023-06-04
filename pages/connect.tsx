@@ -1,7 +1,11 @@
 import Head from 'next/head'
 import NavBar from '../components/nav/nav_bar'
 
+import useLockedBody from '../hooks/lock_scroll';
+
 export default function Connect() {
+  const [locked, setLocked] = useLockedBody(false, 'root');
+
   return (
     <div>
       <Head>
@@ -12,7 +16,7 @@ export default function Connect() {
       {/* Begin Main of Page */}
       <main className='bg-azukigray'>
         {/* Navigation Bar */}
-        <NavBar active_page={Connect.name}/>
+        <NavBar active_page={Connect.name} set_locked={setLocked}/>
 
         {/* Body */}
         <div className='px-4 pt-24 pb-96'>
