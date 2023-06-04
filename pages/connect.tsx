@@ -10,7 +10,7 @@ export default function Connect() {
     <div>
       <Head>
         <title>EdEddyEdward | Connect</title>
-        <link rel='icon' href='/favicon.ico'/>
+        <link rel='icon' href='/icon.ico'/>
       </Head>
 
       {/* Begin Main of Page */}

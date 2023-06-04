@@ -9,7 +9,7 @@ export default function Projects() {
     <div>
       <Head>
         <title>EdEddyEdward | Projects</title>
-        <link rel='icon' href='/favicon.ico'/>
+        <link rel='icon' href='/icon.ico'/>
       </Head>
 
       {/* Begin Main of Page */}
