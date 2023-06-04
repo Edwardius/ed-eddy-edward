@@ -6,7 +6,7 @@ export default function Future() {
     <div>
       <Head>
         <title>EdEddyEdward | Future</title>
-        <link rel='icon' href='/favicon.ico'/>
+        <link rel='icon' href='/icon.ico'/>
       </Head>
 
       {/* Begin Main of Page */}

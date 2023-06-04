@@ -6,7 +6,7 @@ export default function Leadership() {
     <div>
       <Head>
         <title>EdEddyEdward | Leadership</title>
-        <link rel='icon' href='/favicon.ico'/>
+        <link rel='icon' href='/icon.ico'/>
       </Head>
 
       {/* Begin Main of Page */}

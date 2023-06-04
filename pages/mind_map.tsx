@@ -6,7 +6,7 @@ export default function Mindmap() {
     <div>
       <Head>
         <title>EdEddyEdward | MindMap</title>
-        <link rel='icon' href='/favicon.ico'/>
+        <link rel='icon' href='/icon.ico'/>
       </Head>
 
       {/* Begin Main of Page */}
