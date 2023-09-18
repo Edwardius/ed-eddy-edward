@@ -6,9 +6,12 @@ import getBreakpoint from '../utils/get_breakpoint'
 import MenuButton from './nav_hamburger/menu_items/menu_button'
 import Menu from './nav_hamburger/menu'
 import NavMenu from './nav_desktop/nav_menu'
+import ConnectPopup from '../pop_ups/connect/connect_popup'
 
-export default function NavBar({active_page, set_locked}: {active_page: string, 
-  set_locked: (locked: boolean) => void}) {
+import classNames from 'classnames';
+
+export default function NavBar({active_page, setLocked}: {active_page: string, 
+  setLocked: (locked: boolean) => void}) {
   
   const [initialRenderComplete, setInitialRenderComplete] = useState(false);
 
@@ -24,20 +27,28 @@ export default function NavBar({active_page, set_locked}: {active_page: string,
 
   // hamburger menu hook and lock
   const [open, setOpen] = useState(false);
-  set_locked(open);
+  setLocked(open);
+
+  // connect popup menu hook and lock
+  const [connect_open, setConnectOpen] = useState(false);
+  setLocked(open);
 
   if (!initialRenderComplete || size.width == null) {
     return null;
   }
   else if (size.width > breakpoint) {
     return(
-      <div className='z-10 fixed w-full top-0 lg:px-8 px-4 lg:pt-8 pt5 '>
-        <div className='flex h-full items-center justify-between max-w-11xl mx-auto'>
-          <div className='float-left flex'>
-            <HomeButton />
+      <div>
+        <div className={classNames('fixed w-full top-0 lg:px-8 px-4 lg:pt-8 pt5', {'z-30':!connect_open})}>
+          <div className='flex h-full items-center justify-between max-w-11xl mx-auto'>
+            <div className='float-left flex'>
+              <HomeButton />
+            </div>
+            <NavMenu active_page={active_page} connect_open={connect_open} setConnectOpen={setConnectOpen}/>
           </div>
-          <NavMenu active_page={active_page}/>
+          
         </div>
+        <ConnectPopup connect_open={connect_open} setConnectOpen={setConnectOpen}/>
       </div>
     );
   }

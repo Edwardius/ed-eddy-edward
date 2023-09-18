@@ -21,7 +21,7 @@ module.exports = {
     },
     // Default Colour Palette
     colors: {
-      transparent: 'trnsparent',
+      transparent: 'transparent',
       gray: colors.gray,
       black: colors.black,
       'olive': '#ebe7e0',

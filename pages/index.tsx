@@ -28,7 +28,6 @@ export default function Home() {
         <source src='/eee-animation.mp4' type="video/mp4"/>
       </video>
   }
-
   
   return (
     <div>
@@ -38,8 +37,8 @@ export default function Home() {
       </Head>
 
       {/* Begin Main of Page */}
-      <NavBar active_page={Home.name} set_locked={setLocked}/>
-      
+      <NavBar active_page={Home.name} setLocked={setLocked}/>
+
       <div>
         {background}
 
