@@ -8,25 +8,22 @@ export default function Menu ({open, active_page}:
     let items;
     if (open) {
       items = <ul className='w-full'>
-      {/* <li><GenericItem text='Connect' href='/connect' active={active_page}  icon='/icons/mail-icon.png' red={true}/></li> */}
-      {/* <li><GenericItem text='Mindmap' href='/mind_map' active={active_page} /></li>
-      <li><GenericItem text='Projects' href='/projects' active={active_page} /></li>
-      <li><GenericItem text='Leadership' href='/leadership' active={active_page} /></li>
-      <li><GenericItem text='Future' href='/future' active={active_page} /></li> */}
+        <li><GenericItem text='My Thoughts' href='/my_thoughts' active={active_page} /></li>
+        <li><GenericItem text='About Me' href='/about' active={active_page} /></li>
 
-      <li><div className='font-mono font-800 pt-12 border-b-4 border-dotted border-black'><h1>Socials</h1></div></li>
-      <li><GenericItem text='LinkedIn' href='https://www.linkedin.com/in/eddy-zhou-6968b8184/' active={active_page}  icon='/icons/linkedin-icon.png'/></li>
-      <li><GenericItem text='Youtube' href='https://www.youtube.com/channel/UCBYnPI9wfTCs-dCgo6_B45g' active={active_page}  icon='/icons/youtube-icon.png'/></li>
-      <li><GenericItem text='GitHub' href='https://github.com/Edwardius' active={active_page}  icon='/icons/github-icon.png'/></li>
-      
-      <li><div className='font-mono font-800 pt-12 border-b-4 border-dotted border-black'><h1>External</h1></div></li>
-      <li><WATOItem /></li> 
+        <li><div className='font-mono font-800 pt-12 border-b-4 border-dotted border-black'><h1>Socials</h1></div></li>
+        <li><GenericItem text='LinkedIn' href='https://www.linkedin.com/in/eddy-zhou-6968b8184/' active={active_page}  icon='/icons/linkedin-icon.png'/></li>
+        <li><GenericItem text='Youtube' href='https://www.youtube.com/channel/UCBYnPI9wfTCs-dCgo6_B45g' active={active_page}  icon='/icons/youtube-icon.png'/></li>
+        <li><GenericItem text='GitHub' href='https://github.com/Edwardius' active={active_page}  icon='/icons/github-icon.png'/></li>
+        
+        <li><div className='font-mono font-800 pt-12 border-b-4 border-dotted border-black'><h1>External</h1></div></li>
+        <li><WATOItem /></li> 
 
-      <li><div className='text-sm font-mono font-300 pt-12 border-black pb-2'><h1>Ed Eddy Edward © 2022</h1></div></li>
-      <li><div className='text-sm font-mono font-300 border-black'><h1>Why did I make a website? idk.</h1></div></li>
-      <li><div className='text-sm font-mono font-300 border-black'><h1>Art done on Procreate</h1></div></li>
-      <li><div className='text-sm font-mono font-300 border-black'><h1>Made on a Next.js Framework using React, Typescript, TailwindCSS</h1></div></li>
-      <li><div className='text-sm font-mono font-300 pt-12 border-black pb-48'><h1>All components are made from scratch!! </h1></div></li>
+        <li><div className='text-sm font-mono font-300 pt-12 border-black pb-2'><h1>Ed Eddy Edward © 2022</h1></div></li>
+        <li><div className='text-sm font-mono font-300 border-black'><h1>Why did I make a website? idk.</h1></div></li>
+        <li><div className='text-sm font-mono font-300 border-black'><h1>Art done on Procreate</h1></div></li>
+        <li><div className='text-sm font-mono font-300 border-black'><h1>Made on a Next.js Framework using React, Typescript, TailwindCSS</h1></div></li>
+        <li><div className='text-sm font-mono font-300 pt-12 border-black pb-48'><h1>All components are made from scratch!! </h1></div></li>
       </ul>
     }
     else {
