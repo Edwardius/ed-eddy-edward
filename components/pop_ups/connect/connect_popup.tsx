@@ -8,7 +8,7 @@ export default function ConnectPopup ({connect_open, setConnectOpen}:
     if (connect_open) {
       box = <div className='z-40 flex flex-col justify-center rounded h-60 w-64 bg-azukired-500'>
         <div className='flex flex-col h-32 w-full'> 
-          <p className='text-gray-50 font-600 text-2xl font-title text-left px-3 pt-3'>Let's Chat</p>
+          <p className='text-gray-50 font-600 text-2xl font-title text-left px-3 pt-3'>Let&apos;s Chat</p>
           <p className='text-gray-50 text-xs font-mono opacity-50 px-3 text-left pt-2'>I love hearing from different perspectives :)</p>
         </div>
         <div className='flex gap-y-1.5 flex-col h-32 w-full justify-center items-center pb-3'> 
