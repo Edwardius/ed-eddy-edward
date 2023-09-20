@@ -21,7 +21,7 @@ module.exports = {
     },
     // Default Colour Palette
     colors: {
-      transparent: 'trnsparent',
+      transparent: 'transparent',
       gray: colors.gray,
       black: colors.black,
       'olive': '#ebe7e0',
@@ -46,6 +46,7 @@ module.exports = {
     spacing: {
       px: '1px',
       0: '0',
+      0.25: '0.0625rem',
       0.5: '0.125rem',
       1: '0.25rem',
       1.5: '0.375rem',
@@ -92,7 +93,11 @@ module.exports = {
         '11xl': '116rem'
       },
       screens: {
-        'xs': '320px',
+        'xs': '320px'
+      },
+      backdropBlur: {
+        xs: '2px',
+        xxs: '1px'
       }
     },
   },
