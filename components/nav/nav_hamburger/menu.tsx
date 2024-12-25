@@ -8,9 +8,9 @@ export default function Menu ({open, active_page}:
     let items;
     if (open) {
       items = <ul className='w-full'>
-        {/* <li><GenericItem text='My Thoughts' href='/my_thoughts' active={active_page} /></li>
-        <li><GenericItem text='About Me' href='/about' active={active_page} /></li> */}
-
+        <li><GenericItem text='About Me' href='/about' active={active_page} /></li>
+        <li><GenericItem text='Epiphanies' href='/epiphanies' active={active_page} /></li>
+        <li><GenericItem text='Robots' href='/robots' active={active_page} /></li>
         <li><div className='font-mono font-800 pt-12 border-b-4 border-dotted border-black'><h1>Socials</h1></div></li>
         <li><GenericItem text='LinkedIn' href='https://www.linkedin.com/in/eddy-zhou-6968b8184/' active={active_page}  icon='/icons/linkedin-icon.png'/></li>
         <li><GenericItem text='Youtube' href='https://www.youtube.com/channel/UCBYnPI9wfTCs-dCgo6_B45g' active={active_page}  icon='/icons/youtube-icon.png'/></li>

@@ -3,25 +3,25 @@ import NavBar from '../components/nav/nav_bar'
 
 import useLockedBody from '../hooks/lock_scroll'
 
-export default function MyThoughts() {
+export default function Epiphanies() {
   const [locked, setLocked] = useLockedBody(false, 'root')
   return (
     <div>
       <Head>
-        <title>EdEddyEdward | My Thoughts</title>
+        <title>EdEddyEdward | Epiphanies</title>
         <link rel='icon' href='/icon.ico'/>
       </Head>
 
       {/* Begin Main of Page */}
       <main className='bg-azukigray'>
         {/* Navigation Bar */}
-        <NavBar active_page='My Thoughts' setLocked={setLocked}/>
+        <NavBar active_page='Epiphanies' setLocked={setLocked}/>
 
         {/* Body */}
         <div className='px-4 pt-24 pb-96'>
           <div className='bg-olive'>
             <div className='px-4 pt-8 uppercase font-600 text-4xl text-gray-800 font-title'>
-              <h1>Vision & Value</h1>
+              <h1>Not done yet!</h1>
             </div>
             <div className='px-4 pb-8 text-sm font-300 text-gray-800 font-mono'>
               <p>

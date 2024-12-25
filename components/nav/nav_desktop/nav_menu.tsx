@@ -9,8 +9,9 @@ export default function NavMenu ({active_page, connect_open, setConnectOpen}:
   {active_page: string, connect_open: boolean, setConnectOpen: React.Dispatch<React.SetStateAction<boolean>>}) {
     return (
       <ul className='float-right flex space-x-2 min-w-0'>
-        {/* <li><NavButton text='My Thoughts' href='/my_thoughts' active={active_page}/></li>
-        <li><NavButton text='About Me' href='/about' active={active_page}/></li> */}
+        <li><NavButton text='About Me' href='/about' active={active_page}/></li>
+        <li><NavButton text='Epiphanies' href='/epiphanies' active={active_page}/></li>
+        <li><NavButton text='Robots' href='/robots' active={active_page}/></li>
         <li><SocialButton link='https://www.linkedin.com/in/eddy-zhou-6968b8184/' icon='/icons/linkedin-icon.png'/></li>
         <li><SocialButton link='https://www.youtube.com/channel/UCBYnPI9wfTCs-dCgo6_B45g' icon='/icons/youtube-icon.png'/></li>
         <li><SocialButton link='https://github.com/Edwardius' icon='/icons/github-icon.png'/></li>

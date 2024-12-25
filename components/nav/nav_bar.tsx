@@ -39,7 +39,7 @@ export default function NavBar({active_page, setLocked}: {active_page: string,
   else if (size.width > breakpoint) {
     return(
       <div>
-        <div className={classNames('fixed w-full top-0 lg:px-8 px-4 lg:pt-8 pt5', {'z-30':!connect_open})}>
+        <div className={'fixed w-full top-0 lg:px-8 px-4 lg:pt-8 pt5 z-20'}>
           <div className='flex h-full items-center justify-between max-w-11xl mx-auto'>
             <div className='float-left flex'>
               <HomeButton />
