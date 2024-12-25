@@ -16,15 +16,15 @@ export default function About() {
   <div className='overflow-visible space-y-2.5'>
     <div className='px-4 text-sm font-300 text-gray-800 font-mono'>
       <p>
-        <span className="font-500"> <Bot className='inline-block align-text-bottom'/> Hi, I'm Eddy! </span>
-        An aspiring roboticist interested in Robot Embodiment. I believe that the future of AI centers around robotics and how we can make algorithms perceive, model, and react with the world in real-time. I've worked with many different robots: Autonomous Vehicles, Humanoids, Robot Swarms, Balancing Platforms, Drones, you name it. The world is full of Wall-E enthusiasts, so let's come together and make the future awesome!
+        <span className="font-500"> <Bot className='inline-block align-text-bottom'/> Hi, I&apos;m Eddy! </span>
+        An aspiring roboticist interested in Robot Embodiment. I believe that the future of AI centers around robotics and how we can make algorithms perceive, model, and react with the world in real-time. I&apos;ve worked with many different robots: Autonomous Vehicles, Humanoids, Robot Swarms, Balancing Platforms, Drones, you name it. The world is full of Wall-E enthusiasts, so let&apos;s come together and make the future awesome!
       </p>
     </div>
     <div className='px-4 text-sm font-300 text-gray-800 font-mono'>
       <p>
         <span className="font-500"> 
-          <Code2 className='inline-block align-text-bottom'/> <Hammer className='inline-block align-text-bottom'/> <Palette className='inline-block align-text-bottom'/> I'm mainly a robotics software engineer... 
-        </span> but I've ran into countless times when I had to manufacture my own CAD designs, solder PCBs, interface with sensors and actuators, build websites, draw, lead initiatives, and pitch to companies for fundraising. Honestly, it's all pretty fun, but please only ask me questions on robotics software design :3. 
+          <Code2 className='inline-block align-text-bottom'/> <Hammer className='inline-block align-text-bottom'/> <Palette className='inline-block align-text-bottom'/> I&apos;m mainly a robotics software engineer... 
+        </span> but I&apos;ve ran into countless times when I had to manufacture my own CAD designs, solder PCBs, interface with sensors and actuators, build websites, draw, lead initiatives, and pitch to companies for fundraising. Honestly, it&apos;s all pretty fun, but please only ask me questions on robotics software design :3. 
       </p>
     </div>
     <div className='px-4 pt-4 text-sm font-300 text-gray-800 font-mono'>
