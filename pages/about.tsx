@@ -57,7 +57,7 @@ export default function About() {
       <NavBar active_page='About Me' setLocked={setLocked}/>
 
       {/* Body */}
-      <div className='z-0 bg-olive flex pt-48 pb-48 sm:fixed h-full w-screen items-center justify-center'>
+      <div className='bg-olive flex pt-48 pb-48 min-h-screen w-screen items-center justify-center'>
         <div className='flex flex-col xl:flex-row xl:gap-x-10 w-4/5'>
           {headshot}
           {text}

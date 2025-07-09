@@ -1,54 +1,117 @@
 import Head from 'next/head'
-import NavBar from '../components/nav/nav_bar'
 
+// Nav Bar Deps
+import NavBar from '../components/nav/nav_bar'
 import useLockedBody from '../hooks/lock_scroll'
+
+import { useState } from 'react'
+
+type Post = {
+  slug: string
+  title: string
+  date: string
+  tags: string[]
+  content: string
+  standalone?: boolean
+}
+
+const mockPosts: Post[] = [
+  {
+    slug: 'vision',
+    title: 'Vision & Value',
+    date: '2025-07-08',
+    tags: ['philosophy'],
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    standalone: false,
+  },
+  {
+    slug: 'manifesto',
+    title: 'My Manifesto',
+    date: '2025-07-01',
+    tags: ['personal', 'intro'],
+    content: 'Sed ut perspiciatis unde omnis iste natus error sit...',
+    standalone: false,
+  },
+]
 
 export default function Blog() {
   const [locked, setLocked] = useLockedBody(false, 'root')
+  
+  const [query, setQuery] = useState('')
+  const [selectedTags, setSelectedTags] = useState<string[]>([])
+
+  const filteredPosts = mockPosts.filter((post) => {
+    const matchQuery = post.title.toLowerCase().includes(query.toLowerCase())
+    const matchTags =
+      selectedTags.length === 0 ||
+      selectedTags.some((tag) => post.tags.includes(tag))
+    return matchQuery && matchTags
+  })
+
+  const allTags = Array.from(new Set(mockPosts.flatMap((post) => post.tags)))
+
   return (
     <div>
       <Head>
         <title>EdEddyEdward | Blog</title>
-        <link rel='icon' href='/icon.ico'/>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
-      {/* Begin Main of Page */}
-      <main className='bg-azukigray'>
-        {/* Navigation Bar */}
-        <NavBar active_page='Blog' setLocked={setLocked}/>
+      {/* Navigation Bar */}
+      <NavBar active_page='Blog' setLocked={setLocked}/>
 
-        {/* Body */}
-        <div className='px-4 pt-24 pb-96'>
-          <div className='bg-olive'>
-            <div className='px-4 pt-8 uppercase font-600 text-4xl text-gray-800 font-title'>
-              <h1>Not done yet!</h1>
-            </div>
-            <div className='px-4 pb-8 text-sm font-300 text-gray-800 font-mono'>
-              <p>
-                <span className="font-500">Under Construction </span>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempor, mi ut luctus rhoncus, lorem dui posuere nisi, eleifend venenatis erat elit sit amet tortor. Etiam ut consectetur quam. Cras nisl metus, porttitor at lectus lobortis, auctor ullamcorper elit. Cras at nibh id magna imperdiet euismod. Fusce fringilla nec ex non posuere. Curabitur varius ipsum at velit ultricies iaculis. Vestibulum at urna et lorem tempor pulvinar. Sed dictum sem at quam pellentesque ornare. Under Construction
-              </p>
-            </div>
+      <div className="z-0 min-h-screen bg-olive pt-24 px-4 pb-16">
+        <section className="max-w-4xl mx-auto space-y-8">
+          {/* Search bar */}
+          <input
+            type="text"
+            placeholder="Search posts..."
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            className="w-full p-2 border border-gray-300 rounded shadow-sm bg-white"
+          />
+
+          {/* Tag filter buttons */}
+          <div className="flex flex-wrap gap-2">
+            {allTags.map((tag) => {
+              const selected = selectedTags.includes(tag)
+              return (
+                <button
+                  key={tag}
+                  onClick={() =>
+                    setSelectedTags((prev) =>
+                      selected ? prev.filter((t) => t !== tag) : [...prev, tag]
+                    )
+                  }
+                  className={`px-3 py-1 rounded-full text-sm ${
+                    selected
+                      ? 'bg-black text-white'
+                      : 'bg-white border border-gray-300'
+                  }`}
+                >
+                  {tag}
+                </button>
+              )
+            })}
           </div>
-        </div>
 
-        <div className='px-4 pt-24 pb-96'>
-          <div className='bg-olive'>
-            <div className='px-4 pt-8 uppercase font-600 text-4xl text-gray-800 font-title'>
-              <h1>Vision & Value</h1>
-            </div>
-            <div className='px-4 pb-8 text-sm font-300 text-gray-800 font-mono'>
-              <p>
-                <span className="font-500">Under Construction </span>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempor, mi ut luctus rhoncus, lorem dui posuere nisi, eleifend venenatis erat elit sit amet tortor. Etiam ut consectetur quam. Cras nisl metus, porttitor at lectus lobortis, auctor ullamcorper elit. Cras at nibh id magna imperdiet euismod. Fusce fringilla nec ex non posuere. Curabitur varius ipsum at velit ultricies iaculis. Vestibulum at urna et lorem tempor pulvinar. Sed dictum sem at quam pellentesque ornare. Under Construction
-              </p>
-            </div>
+          {/* Blog post panels */}
+          <div className="flex flex-col gap-10">
+            {filteredPosts.map((post) => (
+              <article
+                key={post.slug}
+                className="bg-white p-6 rounded shadow-md"
+              >
+                <h2 className="text-2xl font-bold">{post.title}</h2>
+                <p className="text-sm text-gray-500">{post.date}</p>
+                <div className="mt-4 text-gray-700 text-sm">
+                  {post.content.substring(0, 200)}...
+                </div>
+              </article>
+            ))}
           </div>
-        </div>
-
-      </main>
-      {/* End Main of Page */}
-
+        </section>
+      </div>
     </div>
   )
 }

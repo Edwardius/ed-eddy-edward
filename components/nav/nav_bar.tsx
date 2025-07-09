@@ -25,13 +25,13 @@ export default function NavBar({active_page, setLocked}: {active_page: string,
   const size = useWindowDimensions();
   const breakpoint = getBreakpoint('xl');
 
-  // hamburger menu hook and lock
-  const [open, setOpen] = useState(false);
-  setLocked(open);
+  const [open, setOpen] = useState(false)
+  const [connect_open, setConnectOpen] = useState(false)
 
-  // connect popup menu hook and lock
-  const [connect_open, setConnectOpen] = useState(false);
-  setLocked(open);
+  // lock scroll only when menu or connect popup is open
+  useEffect(() => {
+    setLocked(open || connect_open)
+  }, [open, connect_open])
 
   if (!initialRenderComplete || size.width == null) {
     return null;
