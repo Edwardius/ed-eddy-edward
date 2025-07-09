@@ -36,7 +36,7 @@ export default function About() {
     </div>
     <div className='px-4 text-sm font-300 font-mono'>
       <p>
-        Check out all the <IntextButton text='Epiphanies' href='/epiphanies'/> I had in my life, or take a look at all the <IntextButton text='Robots' href='/robots'/> I worked with.
+        Check out my <IntextButton text='Blog' href='/blog'/>, or take a look at all the <IntextButton text='Robots' href='/robots'/> I worked with.
       </p>
     </div>
   </div>
