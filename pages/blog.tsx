@@ -21,7 +21,7 @@ const mockPosts: Post[] = [
     title: 'Vision & Value',
     date: '2025-07-08',
     tags: ['philosophy'],
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...',
+    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit..Lorem ipsum dolor sit amet, consectetur adipiscing elit..Lorem ipsum dolor sit amet, consectetur adipiscing elit..Lorem ipsum dolor sit amet, consectetur adipiscing elit..Lorem ipsum dolor sit amet, consectetur adipiscing elit..Lorem ipsum dolor sit amet, consectetur adipiscing elit..',
     standalone: false,
   },
   {
@@ -119,7 +119,6 @@ export default function Blog() {
       <div className="h-screen bg-olive pt-24 pb-24 px-4 overflow-hidden">
         <section className="max-w-6xl mx-auto flex flex-row gap-8 h-full">
           {/* Left Sidebar */}
-
           <div className="md:w-1/3 hidden md:flex items-center justify-center">
             <div className="space-y-6 max-h-[80vh] overflow-hidden">
               <img
@@ -153,7 +152,7 @@ export default function Blog() {
           {/* Right Blog Content */}
           <div className="md:w-2/3 w-full h-full flex flex-col pr-2 space-y-4">
             {/* Fixed Search and Tags */}
-            <div className="flex flex-col space-y-4 sticky top-0 z-10 bg-olive pt-2 pb-2">
+            <div className="flex flex-col space-y-4 top-0 bg-olive pt-2 pb-2">
               {/* Search bar */}
               <input
                 type="text"
