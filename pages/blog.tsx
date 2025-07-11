@@ -8,6 +8,7 @@ import getBreakpoint from '../components/utils/get_breakpoint'
 
 import { useState } from 'react'
 import SortDropdown from '../components/search/sort_dropdown'
+import ButtondownSubscribeForm from '../components/blog/buttondown_subscribe_form'
 
 type Post = {
   slug: string
@@ -156,14 +157,7 @@ export default function Blog() {
                       Do not take anything I write about seriously... I beg you.
                     </p>
                   </div>
-                  <div className="text-sm font-mono text-gray-700">
-                    <p className="font-bold uppercase text-xs tracking-widest">Contact</p>
-                    <p className="mt-2">
-                      <a href="mailto:edward.zhzh@gmail.com" className="text-blue-600 hover:underline">
-                        edward.zhzh@gmail.com
-                      </a>
-                    </p>
-                  </div>
+                  <ButtondownSubscribeForm />
                 </div>
               </div>
             </div>
