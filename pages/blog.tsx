@@ -3,8 +3,11 @@ import Head from 'next/head'
 // Nav Bar Deps
 import NavBar from '../components/nav/nav_bar'
 import useLockedBody from '../hooks/lock_scroll'
+import useWindowDimensions from '../hooks/window_size'
+import getBreakpoint from '../components/utils/get_breakpoint'
 
 import { useState } from 'react'
+import SortDropdown from '../components/search/sort_dropdown'
 
 type Post = {
   slug: string
@@ -96,15 +99,28 @@ export default function Blog() {
   const [query, setQuery] = useState('')
   const [selectedTags, setSelectedTags] = useState<string[]>([])
 
-  const filteredPosts = mockPosts.filter((post) => {
+  const [showTags, setShowTags] = useState(false)
+  const [sortOrder, setSortOrder] = useState<'newest' | 'oldest'>('newest')
+
+  const sortedPosts = [...mockPosts].sort((a, b) =>
+    sortOrder === 'newest'
+      ? new Date(b.date).getTime() - new Date(a.date).getTime()
+      : new Date(a.date).getTime() - new Date(b.date).getTime()
+  )
+
+  const filteredPosts = sortedPosts.filter((post) => {
     const matchQuery = post.title.toLowerCase().includes(query.toLowerCase())
     const matchTags =
-      selectedTags.length === 0 ||
-      selectedTags.some((tag) => post.tags.includes(tag))
+      selectedTags.length === 0 || selectedTags.some((tag) => post.tags.includes(tag))
     return matchQuery && matchTags
   })
 
   const allTags = Array.from(new Set(mockPosts.flatMap((post) => post.tags)))
+
+  const size = useWindowDimensions();
+  const breakpoint = getBreakpoint('md'); // or 'lg' if you want to hide it sooner
+
+  const isDesktop = size.width && size.width >= breakpoint;
 
   return (
     <div>
@@ -117,52 +133,63 @@ export default function Blog() {
       <NavBar active_page='Blog' setLocked={setLocked}/>
 
       <div className="h-screen bg-olive pt-24 pb-24 px-4 overflow-hidden">
-        <section className="max-w-6xl mx-auto flex flex-row gap-8 h-full">
+        <section className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 h-full">
           {/* Left Sidebar */}
-          <div className="md:w-1/3 hidden md:flex items-center justify-center">
-            <div className="space-y-6 max-h-[80vh] overflow-hidden">
-              <img
-                src="/headshot.jpg"
-                alt="Profile photo"
-                className="rounded-full w-40 h-40 object-cover mx-auto md:mx-0"
-              />
-              <div className="text-sm font-mono text-gray-700">
-                <p className="font-bold uppercase text-xs tracking-widest">About This Blog</p>
-                <p className="mt-2">
-                  A collection of things I wanted to write about.
-                </p>
-                <p className="mt-2">
-                  I am well aware that I will most definitely sound like a cringe startup founder. However, there exist days when I genuinely want to express what I think. It is on those days that my eagerness of expression overpowers my fear of embarrassment.
-                </p>
-                <p className="mt-2">
-                  Do not take anything I write about seriously... I beg you.
-                </p>
-              </div>
-              <div className="text-sm font-mono text-gray-700">
-                <p className="font-bold uppercase text-xs tracking-widest">Contact</p>
-                <p className="mt-2">
-                  <a href="mailto:edward.zhzh@gmail.com" className="text-blue-600 hover:underline">
-                    edward.zhzh@gmail.com
-                  </a>
-                </p>
+          {isDesktop && (
+            <div className="w-1/3">
+              <div className="flex items-center justify-center h-full">
+                <div className="space-y-6 max-h-[80vh] overflow-hidden">
+                  <img
+                    src="/headshot.jpg"
+                    alt="Profile photo"
+                    className="rounded-full w-40 h-40 object-cover mx-auto"
+                  />
+                  <div className="text-sm font-mono text-gray-700">
+                    <p className="font-bold uppercase text-xs tracking-widest">About This Blog</p>
+                    <p className="mt-2">
+                      A collection of things I wanted to write about.
+                    </p>
+                    <p className="mt-2">
+                      I am well aware that I will most definitely sound like a cringe startup founder...
+                    </p>
+                    <p className="mt-2">
+                      Do not take anything I write about seriously... I beg you.
+                    </p>
+                  </div>
+                  <div className="text-sm font-mono text-gray-700">
+                    <p className="font-bold uppercase text-xs tracking-widest">Contact</p>
+                    <p className="mt-2">
+                      <a href="mailto:edward.zhzh@gmail.com" className="text-blue-600 hover:underline">
+                        edward.zhzh@gmail.com
+                      </a>
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+          )}
 
           {/* Right Blog Content */}
-          <div className="md:w-2/3 w-full h-full flex flex-col pr-2 space-y-4">
-            {/* Fixed Search and Tags */}
+          <div className="w-full md:w-2/3 h-full flex flex-col pr-2 space-y-4">
+            {/* Search, Sort, and Tags */}
             <div className="flex flex-col space-y-4 top-0 bg-olive pt-2 pb-2">
-              {/* Search bar */}
-              <input
-                type="text"
-                placeholder="Search posts..."
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                className="w-full p-2 border border-gray-300 rounded shadow-sm bg-white"
-              />
 
-              {/* Tag filter buttons */}
+              {/* Search + Sort Row */}
+              <div className="flex items-center gap-4">
+                {/* Search Bar */}
+                <input
+                  type="text"
+                  placeholder="Search posts..."
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  className="flex-grow p-2 border border-gray-300 rounded shadow-sm bg-white font-mono text-sm"
+                />
+
+                {/* Sort Dropdown */}
+                <SortDropdown sortOrder={sortOrder} setSortOrder={setSortOrder} />
+              </div>
+
+              {/* Tag Filter Buttons */}
               <div className="flex flex-wrap gap-2">
                 {allTags.map((tag) => {
                   const selected = selectedTags.includes(tag)
@@ -186,6 +213,7 @@ export default function Blog() {
                 })}
               </div>
             </div>
+
 
             {/* Scrollable Blog Posts */}
             <div className="pr-6 flex-1 overflow-y-auto space-y-8 scrollbar-azuki">

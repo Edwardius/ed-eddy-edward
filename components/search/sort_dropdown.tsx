@@ -1,0 +1,61 @@
+// sort_dropdown.tsx
+import { motion, AnimatePresence } from 'framer-motion'
+import { useState } from 'react'
+
+type SortOrder = 'newest' | 'oldest'
+
+export default function SortDropdown({
+  sortOrder,
+  setSortOrder
+}: {
+  sortOrder: SortOrder
+  setSortOrder: (order: SortOrder) => void
+}) {
+  const [isHovering, setIsHovering] = useState(false)
+
+  const handleChange = (order: SortOrder) => {
+    setSortOrder(order)
+    setIsHovering(false)
+  }
+
+  return (
+    <div
+      className="relative font-mono text-sm z-0"
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+    >
+      <div className="cursor-pointer px-3 py-1 border border-gray-300 bg-white rounded shadow-sm">
+        Sort: {sortOrder === 'newest' ? 'Newest First' : 'Oldest First'}
+      </div>
+
+      <AnimatePresence>
+        {isHovering && (
+          <motion.div
+            initial={{ opacity: 0, y: -4 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -4 }}
+            transition={{ duration: 0.15 }}
+            className="absolute top-full mt-1 left-0 bg-white border border-gray-300 rounded shadow-md overflow-hidden"
+          >
+            <div
+              onClick={() => handleChange('newest')}
+              className={`px-4 py-2 hover:bg-gray-100 cursor-pointer ${
+                sortOrder === 'newest' ? 'font-semibold' : ''
+              }`}
+            >
+              Newest First
+            </div>
+            <div
+              onClick={() => handleChange('oldest')}
+              className={`px-4 py-2 hover:bg-gray-100 cursor-pointer ${
+                sortOrder === 'oldest' ? 'font-semibold' : ''
+              }`}
+            >
+              Oldest First
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  )
+}
