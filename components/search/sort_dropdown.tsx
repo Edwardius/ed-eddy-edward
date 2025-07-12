@@ -19,7 +19,7 @@ export default function SortDropdown({
 
   return (
     <div
-      className="relative font-mono text-sm z-0"
+      className="relative font-mono text-sm z-20"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
@@ -42,7 +42,7 @@ export default function SortDropdown({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -4 }}
             transition={{ duration: 0.15 }}
-            className="absolute top-full mt-1 left-0 bg-white border border-gray-300 rounded shadow-md overflow-hidden"
+            className="absolute top-full mt-1 left-0 bg-white border border-gray-300 rounded shadow-md overflow-hidden z-20"
           >
             <div
               onClick={() => handleChange('newest')}
