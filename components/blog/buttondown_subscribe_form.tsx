@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 export default function ButtondownSubscribeForm() {
   const [showForm, setShowForm] = useState(false)
@@ -12,36 +13,51 @@ export default function ButtondownSubscribeForm() {
       {!showForm ? (
         <button
           onClick={() => setShowForm(true)}
-          className="px-4 py-1.5 bg-azukired-500 hover:bg-azukired-800 text-white rounded text-sm"
+          className="px-4 py-1.5 bg-azukired-500 hover:bg-azukired-800 text-white rounded text-sm transform"
         >
           Subscribe w/ Email
         </button>
-      ) : (
-        <form
-          action="https://buttondown.com/api/emails/embed-subscribe/zhou"
-          method="post"
-          target="popupwindow"
-          onSubmit={handleSubmit}
-          className="flex flex-row items-center space-x-2"
-        >
-          <input
-            type="email"
-            name="email"
-            id="bd-email"
-            required
-            placeholder="Enter your email"
-            className="w-2/3 p-1.5 border border-gray-300 rounded shadow-sm bg-white"
-          />
-          <input
-            type="submit"
-            value="Submit"
-            className="w-1/3 px-4 py-1.5 bg-azukired-500 hover:bg-azukired-800 text-white rounded text-sm"
-          />
-        </form>
-      )}
-      <p className="text-xs text-gray-500 mt-2">
+      ) : null}
+
+      <AnimatePresence>
+        {showForm && (
+          <motion.form
+            key="subscribe-form"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.3 }}
+            action="https://buttondown.com/api/emails/embed-subscribe/zhou"
+            method="post"
+            target="popupwindow"
+            onSubmit={handleSubmit}
+            className="flex flex-row items-center space-x-2 mt-2"
+          >
+            <input
+              type="email"
+              name="email"
+              id="bd-email"
+              required
+              placeholder="Enter your email"
+              className="w-2/3 p-1.5 border border-gray-300 rounded shadow-sm bg-white"
+            />
+            <input
+              type="submit"
+              value="Submit"
+              className="w-1/3 px-4 py-1.5 bg-azukired-500 hover:bg-azukired-800 text-white rounded text-sm"
+            />
+          </motion.form>
+        )}
+      </AnimatePresence>
+
+      <motion.p
+        className="text-xs text-gray-500 mt-2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.4 }}
+      >
         You can unsubscribe at any time.
-      </p>
+      </motion.p>
     </div>
   )
 }

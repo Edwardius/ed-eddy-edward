@@ -1,8 +1,7 @@
-// sort_dropdown.tsx
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 
-type SortOrder = 'newest' | 'oldest'
+type SortOrder = 'newest' | 'oldest' | 'random'
 
 export default function SortDropdown({
   sortOrder,
@@ -24,8 +23,16 @@ export default function SortDropdown({
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
-      <div className="cursor-pointer px-3 py-1 border border-gray-300 bg-white rounded shadow-sm">
-        Sort: {sortOrder === 'newest' ? 'Newest First' : 'Oldest First'}
+      <div
+        className={`cursor-pointer px-3 py-2 border border-gray-300 text-white rounded shadow-sm
+          ${isHovering ? 'bg-azukired-800' : 'bg-azukired-500 hover:bg-azukired-800'}
+        `}
+      >
+        Sort: {sortOrder === 'newest'
+          ? 'Newest First'
+          : sortOrder === 'oldest'
+          ? 'Oldest First'
+          : 'Random Order'}
       </div>
 
       <AnimatePresence>
@@ -52,6 +59,14 @@ export default function SortDropdown({
               }`}
             >
               Oldest First
+            </div>
+            <div
+              onClick={() => handleChange('random')}
+              className={`px-4 py-2 hover:bg-gray-100 cursor-pointer ${
+                sortOrder === 'random' ? 'font-semibold' : ''
+              }`}
+            >
+              Random Order
             </div>
           </motion.div>
         )}

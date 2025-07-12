@@ -27,7 +27,7 @@ export default function BlogFilters({ query, setQuery, sortOrder, setSortOrder, 
                   selected ? prev.filter((t) => t !== tag) : [...prev, tag]
                 )
               }
-              className={`px-3 py-1 rounded-full text-sm ${
+              className={`px-3 py-1 rounded-full text-sm font-mono font-500 text-gray-500 ${
                 selected ? 'bg-black text-white' : 'bg-white border border-gray-300'
               }`}
             >
