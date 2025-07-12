@@ -6,7 +6,11 @@ import useLockedBody from '../hooks/lock_scroll'
 import useWindowDimensions from '../hooks/window_size'
 import getBreakpoint from '../components/utils/get_breakpoint'
 
-import { useState } from 'react'
+import BlogSidebar from '../components/blog/blog_sidebar'
+import BlogFilters from '../components/blog/blog_filters'
+import BlogPostList from '../components/blog/blog_post_list'
+
+import { useEffect, useState } from 'react'
 import SortDropdown from '../components/search/sort_dropdown'
 import ButtondownSubscribeForm from '../components/blog/buttondown_subscribe_form'
 
@@ -123,6 +127,11 @@ export default function Blog() {
 
   const isDesktop = size.width && size.width >= breakpoint;
 
+  const [hasMounted, setHasMounted] = useState(false);
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
   return (
     <div>
       <Head>
@@ -135,97 +144,21 @@ export default function Blog() {
 
       <div className="h-screen bg-olive pt-24 pb-24 px-4 overflow-hidden">
         <section className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 h-full">
-          {/* Left Sidebar */}
-          {isDesktop && (
-            <div className="w-1/3">
-              <div className="flex items-center justify-center h-full">
-                <div className="space-y-6 max-h-[80vh] overflow-hidden">
-                  <img
-                    src="/headshot.jpg"
-                    alt="Profile photo"
-                    className="rounded-full w-40 h-40 object-cover mx-auto"
-                  />
-                  <div className="text-sm font-mono text-gray-700">
-                    <p className="font-bold uppercase text-xs tracking-widest">About This Blog</p>
-                    <p className="mt-2">
-                      A collection of things I wanted to write about.
-                    </p>
-                    <p className="mt-2">
-                      I am well aware that I will most definitely sound like a cringe startup founder...
-                    </p>
-                    <p className="mt-2">
-                      Do not take anything I write about seriously... I beg you.
-                    </p>
-                  </div>
-                  <ButtondownSubscribeForm />
-                </div>
-              </div>
-            </div>
-          )}
+        {hasMounted && isDesktop && <BlogSidebar />}
 
-          {/* Right Blog Content */}
-          <div className="w-full md:w-2/3 h-full flex flex-col pr-2 space-y-4">
-            {/* Search, Sort, and Tags */}
-            <div className="flex flex-col space-y-4 top-0 bg-olive pt-2 pb-2">
-
-              {/* Search + Sort Row */}
-              <div className="flex items-center gap-4">
-                {/* Search Bar */}
-                <input
-                  type="text"
-                  placeholder="Search posts..."
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  className="flex-grow p-2 border border-gray-300 rounded shadow-sm bg-white font-mono text-sm"
-                />
-
-                {/* Sort Dropdown */}
-                <SortDropdown sortOrder={sortOrder} setSortOrder={setSortOrder} />
-              </div>
-
-              {/* Tag Filter Buttons */}
-              <div className="flex flex-wrap gap-2">
-                {allTags.map((tag) => {
-                  const selected = selectedTags.includes(tag)
-                  return (
-                    <button
-                      key={tag}
-                      onClick={() =>
-                        setSelectedTags((prev) =>
-                          selected ? prev.filter((t) => t !== tag) : [...prev, tag]
-                        )
-                      }
-                      className={`px-3 py-1 rounded-full text-sm ${
-                        selected
-                          ? 'bg-black text-white'
-                          : 'bg-white border border-gray-300'
-                      }`}
-                    >
-                      {tag}
-                    </button>
-                  )
-                })}
-              </div>
-            </div>
-
-
-            {/* Scrollable Blog Posts */}
-            <div className="pr-6 flex-1 overflow-y-auto space-y-8 scrollbar-azuki">
-              {filteredPosts.map((post) => (
-                <article
-                  key={post.slug}
-                  className="bg-white p-6 rounded shadow-md"
-                >
-                  <h2 className="text-2xl font-bold">{post.title}</h2>
-                  <p className="text-sm text-gray-500">{post.date}</p>
-                  <div className="mt-4 text-gray-700 text-sm">
-                    {post.content.substring(0, 200)}...
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+        <div className="w-full md:w-3/4 h-full flex flex-col pr-2 space-y-4">
+          <BlogFilters
+            query={query}
+            setQuery={setQuery}
+            sortOrder={sortOrder}
+            setSortOrder={setSortOrder}
+            allTags={allTags}
+            selectedTags={selectedTags}
+            setSelectedTags={setSelectedTags}
+          />
+          <BlogPostList posts={filteredPosts} />
+        </div>
+      </section>
 
       </div>
     </div>
