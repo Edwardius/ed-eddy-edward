@@ -126,7 +126,18 @@
   background: transparent; /* still transparent on hover */
 }
 
+@keyframes blink-highlight {
+  0%, 100% {
+    background-color: white;
+  }
+  50% {
+    background-color: #F7EAE8; /* very light shade of #C9483D */
+  }
+}
 
+.blink {
+  animation: blink-highlight 1s ease-in-out 2;
+}
 
 
 @tailwind utilities;

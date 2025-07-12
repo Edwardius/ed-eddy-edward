@@ -39,7 +39,7 @@ export default function ButtondownSubscribeForm() {
               id="bd-email"
               required
               placeholder="Enter your email"
-              className="w-2/3 p-1.5 border border-gray-300 rounded shadow-sm bg-white"
+              className="w-2/3 p-1.5 flex-grow border-2 border-olive rounded bg-white font-mono text-sm focus:border-azukired-500 focus:ring-azukired-500 focus:outline-none transition"
             />
             <input
               type="submit"

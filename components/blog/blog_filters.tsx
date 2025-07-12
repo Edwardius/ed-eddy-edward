@@ -4,13 +4,13 @@ export default function BlogFilters({ query, setQuery, sortOrder, setSortOrder, 
   return (
     <div className="flex flex-col space-y-4 top-0 bg-olive pt-2 pb-2">
       {/* Search + Sort */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2">
         <input
           type="text"
           placeholder="Search posts..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="flex-grow p-2 border border-gray-300 rounded shadow-sm bg-white font-mono text-sm"
+          className="flex-grow p-2 border-2 border-olive rounded bg-white font-mono text-sm focus:border-azukired-500 focus:ring-azukired-500 focus:outline-none transition"
         />
         <SortDropdown sortOrder={sortOrder} setSortOrder={setSortOrder} />
       </div>
@@ -27,8 +27,8 @@ export default function BlogFilters({ query, setQuery, sortOrder, setSortOrder, 
                   selected ? prev.filter((t) => t !== tag) : [...prev, tag]
                 )
               }
-              className={`px-3 py-1 rounded-full text-sm font-mono font-500 text-gray-500 ${
-                selected ? 'bg-black text-white' : 'bg-white border border-gray-300'
+              className={`px-3 py-1 bg-black bg-opacity-5 hover:bg-opacity-10 rounded-full text-xs font-mono font-300 transition ease-in ${
+                selected ? 'bg-black text-white bg-opacity-100 hover:bg-opacity-70' : 'bg-black'
               }`}
             >
               {tag}

@@ -46,7 +46,7 @@ export default function SortDropdown({
           >
             <div
               onClick={() => handleChange('newest')}
-              className={`px-4 py-2 hover:bg-gray-100 cursor-pointer ${
+              className={`px-4 py-1.5 hover:bg-gray-100 cursor-pointer ${
                 sortOrder === 'newest' ? 'font-semibold' : ''
               }`}
             >
@@ -54,7 +54,7 @@ export default function SortDropdown({
             </div>
             <div
               onClick={() => handleChange('oldest')}
-              className={`px-4 py-2 hover:bg-gray-100 cursor-pointer ${
+              className={`px-4 py-1.5 hover:bg-gray-100 cursor-pointer ${
                 sortOrder === 'oldest' ? 'font-semibold' : ''
               }`}
             >
@@ -62,7 +62,7 @@ export default function SortDropdown({
             </div>
             <div
               onClick={() => handleChange('random')}
-              className={`px-4 py-2 hover:bg-gray-100 cursor-pointer ${
+              className={`px-4 py-1.5 hover:bg-gray-100 cursor-pointer ${
                 sortOrder === 'random' ? 'font-semibold' : ''
               }`}
             >
