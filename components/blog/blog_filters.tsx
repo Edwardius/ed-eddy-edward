@@ -1,6 +1,17 @@
 import SortDropdown from '../search/sort_dropdown'
+import { SortOrder } from './types/sort_order'
 
-export default function BlogFilters({ query, setQuery, sortOrder, setSortOrder, allTags, selectedTags, setSelectedTags }) {
+interface BlogFiltersProps {
+  query: string
+  setQuery: (q: string) => void
+  sortOrder: SortOrder
+  setSortOrder: (o: SortOrder) => void
+  allTags: string[]
+  selectedTags: string[]
+  setSelectedTags: React.Dispatch<React.SetStateAction<string[]>>
+}
+
+export default function BlogFilters({ query, setQuery, sortOrder, setSortOrder, allTags, selectedTags, setSelectedTags } : BlogFiltersProps) {
   return (
     <div className="flex flex-col space-y-4 top-0 bg-olive pt-2 pb-2">
       {/* Search + Sort */}

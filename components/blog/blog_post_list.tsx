@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'lucide-react'
+import { Post } from './types/post'
 
-export default function BlogPostList({ posts }) {
+export default function BlogPostList({ posts } : { posts: Post[] }) {
   const [copiedSlug, setCopiedSlug] = useState<string | null>(null)
   const [highlightedSlug, setHighlightedSlug] = useState<string | null>(null)
 

@@ -9,20 +9,12 @@ import getBreakpoint from '../components/utils/get_breakpoint'
 import BlogSidebar from '../components/blog/blog_sidebar'
 import BlogFilters from '../components/blog/blog_filters'
 import BlogPostList from '../components/blog/blog_post_list'
+import { Post } from '../components/blog/types/post'
 
 import { useEffect, useState } from 'react'
 import SortDropdown from '../components/search/sort_dropdown'
 import ButtondownSubscribeForm from '../components/blog/buttondown_subscribe_form'
 import { getAllPosts } from '../components/utils/posts'
-
-type Post = {
-  slug: string
-  title: string
-  date: string
-  tags: string[]
-  content: string
-  standalone?: boolean
-}
 
 export async function getStaticProps() {
   const posts = getAllPosts()
