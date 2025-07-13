@@ -100,5 +100,44 @@
     font-weight: 400;
 }
 
+/* Transparent scrollbar track with Azuki red thumb */
+.scrollbar-azuki {
+  scrollbar-width: thin;
+  scrollbar-color: #C9483D transparent; /* Firefox */
+}
+
+/* Chrome, Safari, Edge */
+.scrollbar-azuki::-webkit-scrollbar {
+  width: 8px; /* wider scrollbar track */
+}
+
+.scrollbar-azuki::-webkit-scrollbar-thumb {
+  background-color: #C9483D;         /* Azuki red */
+  border-radius: 8px;
+  border: 2px solid transparent;     /* smaller border = wider thumb */
+  background-clip: content-box;
+}
+
+.scrollbar-azuki::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-azuki:hover::-webkit-scrollbar-track {
+  background: transparent; /* still transparent on hover */
+}
+
+@keyframes blink-highlight {
+  0%, 100% {
+    background-color: white;
+  }
+  50% {
+    background-color: #F7EAE8; /* very light shade of #C9483D */
+  }
+}
+
+.blink {
+  animation: blink-highlight 1s ease-in-out 2;
+}
+
 
 @tailwind utilities;

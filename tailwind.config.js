@@ -25,7 +25,7 @@ module.exports = {
       white: colors.white,
       gray: colors.gray,
       black: colors.black,
-      'olive': '#ebe7e0',
+      'olive': '#e8e6dd',
       'azukired': {
         '500':'#c03541', 
         '800':'#f06571'

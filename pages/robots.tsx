@@ -13,7 +13,7 @@ export default function Robots() {
       </Head>
 
       {/* Begin Main of Page */}
-      <main className='bg-azukigray'>
+      <main className='z-0 bg-azukigray'>
         {/* Navigation Bar */}
         <NavBar active_page='Robots' setLocked={setLocked}/>
 
