@@ -39,7 +39,7 @@ export default function BlogFilters({ query, setQuery, sortOrder, setSortOrder, 
                 )
               }
               className={`px-3 py-1 bg-black bg-opacity-5 hover:bg-opacity-10 rounded-full text-xs font-mono font-300 transition ease-in ${
-                selected ? 'bg-black text-white bg-opacity-100 hover:bg-opacity-70' : 'bg-black'
+                selected ? 'bg-black text-white bg-opacity-90 hover:bg-opacity-70' : 'bg-black'
               }`}
             >
               {tag}

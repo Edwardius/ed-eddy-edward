@@ -65,9 +65,9 @@ export default function BlogPostList({ posts } : { posts: Post[] }) {
           {/* Date */}
           <p className="text-sm text-gray-300 font-mono">{post.date}</p>
 
-          {/* Content Preview */}
-          <div className="mt-4 text-gray-700 text-sm font-mono font-300">
-            {post.content.substring(0, 200)}
+          {/* Content */}
+          <div className="text-gray-700 text-sm font-mono font-300 whitespace-pre-line">
+            {post.content}
           </div>
         </article>
       ))}
