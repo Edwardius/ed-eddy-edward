@@ -18,6 +18,7 @@ export default function Menu ({open, active_page}:
     >
       <ul className="w-full">
         <li><GenericItem text='About Me' href='/about' active={active_page} /></li>
+        <li><GenericItem text='Brain Dump' href='https://braindump.ededdyedward.com/' active={active_page} /></li>
         <li><GenericItem text='Blog' href='/blog' active={active_page} /></li>
         <li><GenericItem text='Robots' href='/robots' active={active_page} /></li>
         <li><div className='font-mono font-800 pt-12 border-b-4 border-dotted border-black'><h1>Socials</h1></div></li>
