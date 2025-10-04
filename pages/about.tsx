@@ -17,7 +17,7 @@ export default function About() {
     <div className='px-4 text-sm font-300 text-gray-800 font-mono'>
       <p>
         <span className="font-500"> <Bot className='inline-block align-text-bottom'/> Hi, I&apos;m Eddy! </span>
-        An aspiring roboticist interested in Robot Embodiment. I believe that the future of AI centers around robotics and how we can make algorithms perceive, model, and react with the world in real-time. I&apos;ve worked with many different robots: Autonomous Vehicles, Humanoids, Robot Swarms, Balancing Platforms, Drones, you name it. The world is full of Wall-E enthusiasts, so let&apos;s come together and make the future awesome!
+        A roboticist interested in Robot Embodiment. I believe that the future of AI centers around robotics and how we can make algorithms perceive, model, and react with the world in real-time. I&apos;ve worked with many different robots: Autonomous Vehicles, Humanoids, Robot Swarms, Balancing Platforms, Drones, you name it. The world is full of Wall-E enthusiasts, so let&apos;s come together and make the future awesome!
       </p>
     </div>
     <div className='px-4 text-sm font-300 text-gray-800 font-mono'>
