@@ -1,7 +1,7 @@
 ---
 title: "What's the meaning of life?"
 date: "2025-09-24"
-tags: ["introspective"]
+tags: ["Introspective"]
 standalone: false
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Am I living correctly?"
 date: "2025-10-06"
-tags: ["Regret", "Introspection"]
+tags: ["Regret", "Introspective"]
 standalone: false
 ---
 

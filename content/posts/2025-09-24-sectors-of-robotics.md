@@ -1,7 +1,7 @@
 ---
 title: "Sectors of Robotics"
 date: "2025-09-24"
-tags: ["robotics"]
+tags: ["Robotics"]
 standalone: false
 ---
 

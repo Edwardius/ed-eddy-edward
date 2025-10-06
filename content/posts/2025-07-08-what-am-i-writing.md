@@ -1,7 +1,7 @@
 ---
 title: "What am I writing?"
 date: "2025-07-08"
-tags: ["introspective"]
+tags: ["Introspective"]
 standalone: false
 ---
 
