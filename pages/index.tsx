@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { isAndroid } from 'react-device-detect'
+import { useRouter } from 'next/router'
 import Head from 'next/head'
 import NavBar from '../components/nav/nav_bar'
 import useLockedBody from '../hooks/lock_scroll';
 
 export default function Home() {
+  const router = useRouter()
   const [locked, setLocked] = useLockedBody(false, 'root')
   const [initialRenderComplete, setInitialRenderComplete] = useState(false);
 
@@ -39,7 +41,7 @@ export default function Home() {
       {/* Begin Main of Page */}
       <NavBar active_page={Home.name} setLocked={setLocked}/>
 
-      <div>
+      <div className="cursor-pointer" onClick={() => router.push('/about')}>
         {background}
 
         <img src='/artist-touch.png' className='absolute z-10 md:bottom-20 md:right-20 md:w-64 \
