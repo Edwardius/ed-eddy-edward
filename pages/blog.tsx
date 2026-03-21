@@ -17,7 +17,7 @@ import ButtondownSubscribeForm from '../components/blog/buttondown_subscribe_for
 import { getAllPosts } from '../components/utils/posts'
 
 export async function getStaticProps() {
-  const posts = getAllPosts()
+  const posts = await getAllPosts()
   return {
     props: {
       posts,

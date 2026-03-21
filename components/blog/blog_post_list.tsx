@@ -66,9 +66,10 @@ export default function BlogPostList({ posts } : { posts: Post[] }) {
           <p className="text-sm text-gray-300 font-mono">{post.date}</p>
 
           {/* Content */}
-          <div className="text-gray-700 text-sm font-mono font-300 whitespace-pre-line">
-            {post.content}
-          </div>
+          <div
+            className="text-gray-700 text-sm font-mono font-300 prose prose-sm max-w-none"
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
         </article>
       ))}
     </div>
